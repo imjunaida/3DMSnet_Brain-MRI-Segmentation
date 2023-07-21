@@ -244,8 +244,35 @@ for class_idx in class_mapper :
 """Data Preparation"""    
 x_train, y_train = build_set(T1_vols, T2_vols, label_vols, (3, 9, 3))
 
-import nibabel as nib
-epi_img = nib.load('p_label.nii.gz')
-epi_img_data = epi_img.get_fdata()
-epi_img_data.shape
+#Setting Callbacks
+from keras.callbacks import ModelCheckpoint
+from keras.callbacks import CSVLogger
+from keras.callbacks import EarlyStopping
+
+# Early stopping for reducing over-fitting risk
+stopper = EarlyStopping(patience=patience)
+
+# Model checkpoint to save the training results
+checkpointer = ModelCheckpoint(
+    filepath=model_filename.format(1),
+    verbose=0,
+    save_best_only=True,
+    save_weights_only=True)
+
+# CSVLogger to save the training results in a csv file
+csv_logger = CSVLogger(csv_filename.format(1), separator=';')
+
+callbacks = [checkpointer, csv_logger, stopper]
+
+
+# Build model
+model = generate_model(num_classes)
+model.fit(
+    x_train,
+    y_train,
+    epochs=nb_epoch,
+    validation_split=validation_split,
+    verbose=2,
+    callbacks=callbacks)
+
  
