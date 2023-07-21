@@ -9,12 +9,12 @@ import nibabel as nib
 import numpy as np
 dice=0
 for i in range(1,6):
-    img1 =nib.load('datasets/iSeg2017/iSeg-2017-Training/subject-{}-label.hdr'.format(i))
+    img1 =nib.load('datasets/Testing/subject-{}-label.hdr'.format(i))
     data1 = img1.get_fdata()
   
     gt = np.rot90(data1.squeeze(), 1)
 
-    img =nib.load('results/iSeg2017/iSeg-2017-Training/subject-{}-label.hdr'.format(i))
+    img =nib.load('results/Testing/subject-{}-label.hdr'.format(i))
     data = img.get_fdata()
     
     seg = np.rot90(data.squeeze(), 1)
