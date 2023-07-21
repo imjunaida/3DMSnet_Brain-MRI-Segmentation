@@ -14,8 +14,8 @@ np.random.seed(seed)
 num_classes = 3
 
 patience = 1
-model_filename = 'models/iSeg2017/outrun_step_{}.h5'
-csv_filename = 'log/iSeg2017/outrun_step_{}.cvs'
+model_filename = 'models/segment_{}.h5'
+csv_filename = 'log/segment_{}.cvs'
 
 nb_epoch = 20
 validation_split = 0.25
@@ -25,7 +25,7 @@ class_mapper_inv = {0 : 0, 1 : 10, 2 : 150, 3 : 250}
 
 # General utils for reading and saving data
 def get_filename(set_name, case_idx, input_name, loc='datasets') :
-    pattern = '{0}/iSeg2017/iSeg-2017-{1}/subject-{2}-{3}.hdr'
+    pattern = '{0}/-{1}/subject-{2}-{3}.hdr'
     return pattern.format(loc, set_name, case_idx, input_name)
 
 def get_set_name(case_idx) :
