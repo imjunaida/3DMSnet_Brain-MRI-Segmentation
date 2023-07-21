@@ -6,5 +6,5 @@
 
  # Pipeline of the system
 
- ![alt text](https://github.com/imjunaida/3DMSnet_Brain-MRI-Segmentation/blob/master/Plots/mri3.jpg?raw=true)
+ ![alt text](https://github.com/imjunaida/3DMSnet_Brain-MRI-Segmentation/blob/master/Plots/mri3.png?raw=true)
 
