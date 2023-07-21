@@ -4,4 +4,7 @@
 
  This method is inspired by the work of *Jose Dolz et al.*: [3D fully convolutional networks for subcortical segmentation in MRI: A large-scale study](https://www.sciencedirect.com/science/article/abs/pii/S1053811917303324)
 
- 
+ # Pipeline of the system
+
+ ![alt text](https://github.com/imjunaida/3DMSnet_Brain-MRI-Segmentation/blob/master/Plots/mri3.jpg?raw=true)
+
